@@ -26,8 +26,14 @@ for d in counts.to_dict("records"):
 
 
 # filtered graph
-nx.draw_kamada_kawai(G)
-
+nx.draw(G, pos=nx.random_layout(G),with_labels = True,node_size =20,node_color = 'y',edge_color = 'r')
+plt.savefig("F:/UIUC/590DV/homework5/personal_email1.png", dpi=300)
+nx.draw(G,pos = nx.spring_layout(G),with_labels = True,node_size =20,node_color = 'k',edge_color = 'r')
+plt.savefig("F:/UIUC/590DV/homework5/personal_email2.png", dpi=300)
+nx.draw(G,pos = nx.circular_layout(G),with_labels = True,node_size =20,node_color = 'w',edge_color = 'r')
+plt.savefig("F:/UIUC/590DV/homework5/personal_email3.png", dpi=300)
+nx.draw(G,pos = nx.shell_layout(G),with_labels = True,node_size =20,node_color = 'b',edge_color = 'r')
+plt.savefig("F:/UIUC/590DV/homework5/personal_email4.png", dpi=300)
 
 # Use a Circos Plot
 c = CircosPlot(G, radius=10, nodecolor = "blue", edgecolor = "red")
